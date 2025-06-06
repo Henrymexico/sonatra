@@ -1,1 +1,19 @@
-body { font-family: 'Segoe UI', sans-serif; background: #f8f9fa; }
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: #f8f9fa;
+}
+
+.text-guinda {
+    color: #5c1225 !important;
+}
+.bg-guinda {
+    background-color: #5c1225 !important;
+}
+.btn-guinda {
+    background-color: #5c1225 !important;
+    color: white !important;
+    border: none;
+}
+.btn-guinda:hover {
+    background-color: #4a0f1e !important;
+}
