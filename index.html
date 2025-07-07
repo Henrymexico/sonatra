@@ -1,14 +1,61 @@
-<!DOCTYPE html><html lang="es"><head><title>Inicio</title>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Inicio</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
-</head><body>
+  <style>
+    .text-guinda {
+      color: #5c1225 !important;
+    }
+    .bg-guinda {
+      background-color: #5c1225 !important;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+    header.animated-banner {
+      position: relative;
+      background-image: url('img/banner.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      overflow: hidden;
+      animation: zoomBanner 15s ease-in-out infinite alternate;
+    }
+    header.animated-banner::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(92, 18, 37, 0.85); /* filtro guinda */
+      z-index: 1;
+    }
+    @keyframes zoomBanner {
+      0% {
+        background-size: 10%;
+      }
+      100% {
+        background-size: 20%;
+      }
+    }
+    header .container {
+      position: relative;
+      z-index: 2;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">
-  <img src="img/logo.jpg" alt="Logo SONATRA" height="110">
-</a>
+      <img src="img/logo.jpg" alt="Logo SONATRA" height="110">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -23,20 +70,106 @@
   </div>
 </nav>
 
-<header class="bg-guinda text-white text-center py-5">
-  <div class="container"><h1 class="display-4 fw-bold">Bienvenido a SONATRA</h1>
-  <p class="lead">Comprometidos con el desarrollo del transporte nacional</p></div></header>
-<section class="py-5"><div class="container"><h2 class="text-center text-guinda mb-4">Nuestros Servicios</h2>
-<div class="row text-center">
-  <div class="col-md-4"><div class="card shadow-sm mb-4"><div class="card-body"><h5 class="card-title text-guinda">Afiliación</h5><p>Beneficios institucionales exclusivos.</p></div></div></div>
-  <div class="col-md-4"><div class="card shadow-sm mb-4"><div class="card-body"><h5 class="card-title text-guinda">Asesoría</h5><p>Soporte legal y técnico normativo.</p></div></div></div>
-  <div class="col-md-4"><div class="card shadow-sm mb-4"><div class="card-body"><h5 class="card-title text-guinda">Capacitación</h5><p>Formación continua profesional.</p></div></div></div>
-</div></div></section>
+<!-- Banner animado -->
+<header class="animated-banner text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Bienvenido a SONATRA</h1>
+    <p class="lead">Comprometidos con el desarrollo del transporte nacional</p>
+    <p class="lead">Contáctanos a Tel. (664) 977-6453</p>
+  </div>
+</header>
+
+<!-- Sección Servicios -->
+<section class="py-5">
+  <div class="container">
+    <h2 class="text-center text-guinda mb-4">Nuestros Servicios</h2>
+    <div class="row text-center">
+      
+      <!-- Afiliación -->
+      <div class="col-md-4">
+        <a href="afiliacion.html" style="text-decoration:none">
+          <div class="card shadow-sm mb-4 h-100">
+            <div class="card-body">
+              <h5 class="card-title text-guinda">Afiliación</h5>
+              <p>Beneficios institucionales exclusivos.</p>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Asesoría con modal -->
+      <div class="col-md-4">
+        <div class="card shadow-sm mb-4 h-100" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#modalAsesoria">
+          <div class="card-body">
+            <h5 class="card-title text-guinda">Asesoría</h5>
+            <p>Soporte legal y técnico normativo.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Capacitación con modal -->
+      <div class="col-md-4">
+        <div class="card shadow-sm mb-4 h-100" style="cursor:pointer;" data-bs-toggle="modal" data-bs-target="#modalCapacitacion">
+          <div class="card-body">
+            <h5 class="card-title text-guinda">Capacitación</h5>
+            <p>Formación continua profesional.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Modales -->
+<!-- Modal Asesoría -->
+<div class="modal fade" id="modalAsesoria" tabindex="-1" aria-labelledby="modalAsesoriaLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-guinda text-white">
+        <h5 class="modal-title" id="modalAsesoriaLabel">Asesoría</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <br>
+        <strong>Contamos con abogados expertos en transporte público para apoyarte en todo tipo de tramitologia.</strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Capacitación -->
+<div class="modal fade" id="modalCapacitacion" tabindex="-1" aria-labelledby="modalCapacitacionLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-guinda text-white">
+        <h5 class="modal-title" id="modalCapacitacionLabel">Capacitación</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <br>
+        <strong>Ofrecemos Capacitacion en: <br> Alcoholimetro <br> Peritos de Hechos de transito Municipal <br> Policia y Transito Municipal. </strong>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Footer -->
 <footer class="bg-dark text-white text-center py-3 mt-5">
   <div class="container">
     <p class="mb-0">&copy; 2025 SONATRA. Todos los derechos reservados.</p>
   </div>
 </footer>
+
+<!-- Scripts Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/scripts.js"></script>
-</body></html>
+
+</body>
+</html>

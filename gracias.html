@@ -1,34 +1,64 @@
-<!DOCTYPE html><html lang="es"><head><title>Gracias</title>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Gracias</title>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="css/estilos.css">
-</head><body>
+  <style>
+    .text-guinda {
+        color: #5c1225 !important;
+    }
+    .bg-guinda {
+        background-color: #5c1225 !important;
+    }
+    .card:hover {
+        transform: translateY(-5px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
 <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
   <div class="container">
     <a class="navbar-brand fw-bold" href="index.html">
-  <img src="img/logo.jpg" alt="Logo SONATRA" height="110">
-</a>
+      <img src="img/logo.jpg" alt="Logo SONATRA" height="110">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link text-danger" href="index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link text-danger" href="nosotros.html">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link text-danger" href="servicios.html">Servicios</a></li>
-        <li class="nav-item"><a class="nav-link text-danger" href="contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link text-guinda" href="index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link text-guinda" href="nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link text-guinda" href="servicios.html">Servicios</a></li>
+        <li class="nav-item"><a class="nav-link text-guinda" href="contacto.html">Contacto</a></li>
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="container text-center py-5"><h1 class="text-success">¡Gracias!</h1><p>Tu mensaje ha sido enviado.</p><a href="index.html" class="btn btn-outline-success">Volver al inicio</a></div>
+<header class="bg-guinda text-white text-center py-5">
+  <div class="container">
+    <h1 class="display-4 fw-bold">¡Gracias por tu mensaje!</h1>
+    <p class="lead">Nos pondremos en contacto contigo a la brevedad.</p>
+  </div>
+</header>
+
+<div class="container text-center py-5">
+  <a href="index.html" class="btn btn-guinda">Volver al inicio</a>
+</div>
+
 <footer class="bg-dark text-white text-center py-3 mt-5">
   <div class="container">
     <p class="mb-0">&copy; 2025 SONATRA. Todos los derechos reservados.</p>
   </div>
 </footer>
+
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="js/scripts.js"></script>
-</body></html>
+</body>
+</html>
